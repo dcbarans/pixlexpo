@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="wallpapers_will_be_loaded">Wallpapers will be stored in memory</string>
+    <string name="text_rotate_wallpaper">Wallpaper will be rotated every</string>
+	<string name="app_name">PixlExpo</string>
+
+	<!-- Settings -->
+	<string name="setting_wallpapers_max">Maximum wallpapers to store in memory</string>
+	<string name="setting_wallpapers_rotate">Maximum time to show a wallpaper before it is rotated</string>
+	<string name="setting_wallpapers_rotate_increment">This value is multiplied against the rotate value</string>
+
+</resources>

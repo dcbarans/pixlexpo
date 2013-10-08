@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="dbaranski.pixlexpo"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="7" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" 
+        android:name="PixlExpoApplication">
+        <activity
+            android:name=".PixlexpoActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service android:name=".PixlExpoService" android:exported="false">
+			<intent-filter>
+            	<action android:name="dbaranski.pixlexpo.CHANGE_BACKGROUND" />
+            	<action android:name="android.intent.action.BOOT_COMPLETED" />  
+			</intent-filter>
+        </service>
+        
+		<receiver android:name=".PixlExpoBroadcastReciever">  
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED" />  
+			</intent-filter>
+		</receiver>
+        
+        <receiver android:name="PixlExpoAppWidgetProvider" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_info" />
+        </receiver>
+    </application>
+</manifest>
